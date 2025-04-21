@@ -1,4 +1,4 @@
-// Enhanced Navigation Functionality
+
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -6,9 +6,9 @@ document.querySelectorAll('nav a').forEach(anchor => {
         const targetId = this.getAttribute('href');
         const targetSection = document.querySelector(targetId);
         
-        // Remove active class from all links
+        
         document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-        // Add active class to clicked link
+
         this.classList.add('active');
 
         // Special handling for projects section due to GSAP ScrollTrigger
@@ -27,7 +27,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
                 duration: 1,
                 scrollTo: {
                     y: targetSection,
-                    offsetY: 70 // Account for navbar height
+                    offsetY: 70 
                 },
                 ease: "power2.inOut"
             });
@@ -35,7 +35,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-// Add active state based on scroll position
+
 window.addEventListener('scroll', () => {
     let scrollPosition = window.scrollY;
 
@@ -55,6 +55,6 @@ window.addEventListener('scroll', () => {
 // Form handling
 document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    // Add your form submission logic here
+  
     console.log('Form submitted');
 }); 
